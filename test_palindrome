@@ -1,0 +1,19 @@
+import pytest
+
+import palindrome_para_test as p
+
+
+@pytest.mark.parametrize(
+    "input_a, expected",
+    [
+        (121, True),
+        (1212, False),
+        (1221, True),
+        (123, False),
+        (12321, True),
+        (1234321, True),
+        (12345, False),
+    ]
+)
+def test_palindrome(input_a, expected):
+    assert p.palindrome(input_a) == expected
