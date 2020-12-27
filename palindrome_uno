@@ -1,0 +1,23 @@
+def palindrome(a):
+    first = a
+    result = True
+    cont = 1
+    while a > 10:
+
+        last = a % 10
+        while first > 10:
+            first = int(first / 10)
+            cont *= 10
+        if last == first:
+            result = True
+        else:
+            result = False
+        a = int((a - (first * cont)) / 10)
+        first = a
+        cont = 1
+
+    return result
+
+
+numero = int(input("Enter a number: "))
+print(palindrome(numero))
